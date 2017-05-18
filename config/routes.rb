@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
+  resources :payments
+  resources :payments
+  resources :comments
+  resources :comments
+  
   resources :homes
   resources :articles
-
+  
   root 'welcome#home'
   get 'welcome/about', to: 'welcome#about'
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   
@@ -39,8 +47,7 @@ Rails.application.routes.draw do
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
-  #     resources :comments
-  #     resources :sales do
+  #     #     resources :sales do
   #       get 'recent', on: :collection
   #     end
   #   end
