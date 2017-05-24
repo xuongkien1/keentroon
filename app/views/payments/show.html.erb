@@ -1,14 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @payment.description %>
-</p>
-
-<p>
-  <strong>Amount:</strong>
-  <%= @payment.amount %>
-</p>
+<% render "form" %>
 
 <%= link_to 'Edit', edit_payment_path(@payment) %> |
 <%= link_to 'Back', payments_path %>
